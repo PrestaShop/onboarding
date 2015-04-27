@@ -36,11 +36,12 @@ class OnBoarding extends Module
 		$this->tab = 'administration';
 		$this->version = '0.1.9';
 		$this->author = 'PrestaShop';
+
+		parent::__construct();
+
 		$this->displayName = $this->l('OnBoarding');
 		$this->description = $this->l('The OnBoarding module greets first-time users to their PrestaShop back office: through a small playful
 			interface, it shows the user how to launch his/her shop in several easy steps.');
-
-		parent::__construct();
 
 		if (Configuration::get('PS_ONBOARDING_CURRENT_STEP') > 6)
 			$this->uninstall();
