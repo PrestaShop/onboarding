@@ -34,7 +34,7 @@ class OnBoarding extends Module
 		$this->name = 'onboarding';
 		$this->bootstrap = true;
 		$this->tab = 'administration';
-		$this->version = '0.1.9';
+		$this->version = '0.2.0';
 		$this->author = 'PrestaShop';
 
 		parent::__construct();
