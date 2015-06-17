@@ -120,7 +120,6 @@ class OnBoarding extends Module
 			'next_step_link' => $this->getCurrentStepLink($current_step),
 			'current_step' => $current_step,'link' => $this->context->link,
 			'employee' => $this->context->employee,
-			'removable' => _PS_MODE_DEV_,
 			'continue_editing_links' => array(
 				'theme' => $this->context->link->getAdminLink('AdminThemes'),
 				'product' => $this->context->link->getAdminLink('AdminProducts').'&addproduct',
