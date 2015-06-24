@@ -31,22 +31,22 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 {capture name="onboardingStepParagraph"}
 	{if $current_step == 0}
 		{l s='Hey %s, welcome on your own online shop.[1]Follow the guide and take the first steps with your online shop!' sprintf=[$employee->firstname] tags=['<br />'] mod='onboarding'}
-	{else if $current_step == 1}
+	{elseif $current_step == 1}
 		{l s='Check out our catalog to get a new theme or customize the current default theme.[1]Add your logo, play on fonts and colors... Give this special look to your shop!' tags=['<br />'] mod='onboarding'}
-	{else if $current_step == 2}
+	{elseif $current_step == 2}
 		{l s='Start your product catalog with a first product.[1]Make sure you cover the basics by setting its price, having a nice description and uploading a catchy image![1]If you already have your product base in a .CSV file, save time and make an import!' tags=['<br />'] mod='onboarding'}
-	{else if $current_step == 3}
+	{elseif $current_step == 3}
 		{l s='Select which payment methods you want to offer to customers on your shop, and manage the various restrictions you can apply (per currency, country or group of customers).' mod='onboarding'}
-	{else if $current_step == 4}
+	{elseif $current_step == 4}
 		{l s='If you feel you need more information, you can still have a look at PrestaShop Documentation: click on "Help" in the top right corner of your back office!' mod='onboarding'}
-	{else if $current_step == 5}
+	{elseif $current_step == 5}
 		{l s='You have completed all the essential first steps to configure your online shop. You can repeat those steps if you have more products, payment methods or shipping partners to add.[1]To dive deeper in the configuration of your shop, you should read the [2]"First steps with PrestaShop 1.6"[/2] chapter of the PrestaShop User Guide.[1]Once you are certain that your shop is ready to sell your products, click on the Launch button to make your shop public.'  tags=['<br />', '<a href="http://doc.prestashop.com/display/PS16/First+steps+with+PrestaShop+1.6" class="_blank">'] mod='onboarding'}
 	{/if}
 {/capture}
 {capture name="onboardingStepButton"}
 	{if $current_step == 0}
 		{l s='Let\'s start!' mod='onboarding'}
-	{else if $current_step == 5}
+	{elseif $current_step == 5}
 		{l s='I\'m all good, let\'s launch!' mod='onboarding'}
 	{else}
 		{l s='I\'m done, take me to next step' mod='onboarding'}
@@ -55,15 +55,15 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 {capture name="onboardingStepBannerTitle"}
 	{if $current_step == 0}
 		{l s='Take a tour: get started with PrestaShop' mod='onboarding'}
-	{else if $current_step == 1}
+	{elseif $current_step == 1}
 		{l s='Customize your shop\'s look and feel' mod='onboarding'}
-	{else if $current_step == 2}
+	{elseif $current_step == 2}
 		{l s='Add your first products' mod='onboarding'}
-	{else if $current_step == 3}
+	{elseif $current_step == 3}
 		{l s='Get your shop ready for payments' mod='onboarding'}
-	{else if $current_step == 4}
+	{elseif $current_step == 4}
 		{l s='You are now ready to launch your shop.' mod='onboarding'}
-	{else if $current_step == 5}
+	{elseif $current_step == 5}
 		{l s='You are now ready to launch your shop.' mod='onboarding'}
 	{/if}
 {/capture}
@@ -71,38 +71,38 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 {capture name="onboardingStepModalTitle"}
 	{if $current_step == 1}
 		{l s='A few steps before launching!' mod='onboarding'}
-	{else if $current_step == 2}
+	{elseif $current_step == 2}
 		{l s='Let\'s create your first products' mod='onboarding'}
-	{else if $current_step == 3}
+	{elseif $current_step == 3}
 		{l s='Get your shop ready for payments' mod='onboarding'}
-	{else if $current_step == 4}
+	{elseif $current_step == 4}
 		{l s='Choose your shipping options' mod='onboarding'}
-	{else if $current_step == 5}
+	{elseif $current_step == 5}
 		{l s='Hurrah!' mod='onboarding'}
 	{/if}
 {/capture}
 {capture name="onboardingComplete"}
 	{if $current_step == 1}
-	{else if $current_step == 2}
+	{elseif $current_step == 2}
 		{l s='1/4 complete' mod='onboarding'}
-	{else if $current_step == 3}
+	{elseif $current_step == 3}
 		{l s='2/4 complete' mod='onboarding'}
-	{else if $current_step == 4}
+	{elseif $current_step == 4}
 		{l s='3/4 complete' mod='onboarding'}
-	{else if $current_step == 5}
+	{elseif $current_step == 5}
 		{l s='4/4 complete' mod='onboarding'}
 	{/if}
 {/capture}
 {capture name="onboardingCompletePercentage"}
 	{if $current_step == 1}
 	10%%
-	{else if $current_step == 2}
+	{elseif $current_step == 2}
 	25%%
-	{else if $current_step == 3}
+	{elseif $current_step == 3}
 	50%%
-	{else if $current_step == 4}
+	{elseif $current_step == 4}
 	75%%
-	{else if $current_step == 5}
+	{elseif $current_step == 5}
 	100%%
 	{/if}
 {/capture}
@@ -184,7 +184,7 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 							<i class="icon icon-pencil icon-lg"></i>
 							{l s='OK, take me to my theme' mod='onboarding'}</a>
 						</p>
-					{else if $current_step > 1}
+					{elseif $current_step > 1}
 						<p class="desc">
 							<a class="continue_editing" href="{$continue_editing_links.theme|escape:'html':'UTF-8'}">{l s='Continue editing' mod='onboarding'}</a>
 						</p>
@@ -204,7 +204,7 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 							<i class="icon icon-book icon-lg"></i>
 							{l s='Ok, Go to my catalog' mod='onboarding'}</a>
 						</p>
-					{else if $current_step > 2}
+					{elseif $current_step > 2}
 						<p class="desc">
 							<a class="" href="{$continue_editing_links.product|escape:'html':'UTF-8'}">{l s='Continue adding products' mod='onboarding'}</a>
 						</p>
@@ -221,7 +221,7 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 								{l s='Show me payment methods' mod='onboarding'}
 							</a>
 						</p>
-					{else if $current_step > 3}
+					{elseif $current_step > 3}
 						<p class="desc">
 							<a class="" href="{$continue_editing_links.payment|escape:'html':'UTF-8'}">{l s='Continue selecting payment methods' mod='onboarding'}</a>
 						</p>
@@ -240,7 +240,7 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 							{l s='Let\'s see about shipping' mod='onboarding'}
 						</a>
 					</p>
-					{else if $current_step > 4}
+					{elseif $current_step > 4}
 						<p class="desc">
 							<a class="" href="{$continue_editing_links.carrier|escape:'html':'UTF-8'}">{l s='Continue selecting shipping methods' mod='onboarding'}</a>
 						</p>
@@ -277,7 +277,7 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 			<div class="step-before-launch text-center">
 				{if $current_step == 4}
 					{l s='Last step before launch!' mod='onboarding'}
-				{else if $current_step == 5}
+				{elseif $current_step == 5}
 					{l s='You are all set!' mod='onboarding'}
 				{else}
 					{l s='You are only %s steps away from launch!' sprintf=[5-(int)$current_step] mod='onboarding'}
