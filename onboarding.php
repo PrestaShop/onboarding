@@ -114,11 +114,13 @@ class OnBoarding extends Module
 	public function hookDisplayBackOfficeTop()
 	{
 		$current_step = (int)Configuration::get('PS_ONBOARDING_CURRENT_STEP');
+        $has_psp = Module::isInstalled('psphipay');
 
 		$this->context->smarty->assign(array(
 			'display_onboarding_modal' => (int)Tools::isSubmit('onboarding'),
 			'next_step_link' => $this->getCurrentStepLink($current_step),
 			'current_step' => $current_step,'link' => $this->context->link,
+            'has_psp' => (bool)$has_psp,
 			'employee' => $this->context->employee,
 			'continue_editing_links' => array(
 				'theme' => $this->context->link->getAdminLink('AdminThemes'),

@@ -36,7 +36,11 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 	{else if $current_step == 2}
 		{l s='Start your product catalog with a first product.[1]Make sure you cover the basics by setting its price, having a nice description and uploading a catchy image![1]If you already have your product base in a .CSV file, save time and make an import!' tags=['<br />'] mod='onboarding'}
 	{else if $current_step == 3}
-		{l s='Select which payment methods you want to offer to customers on your shop, and manage the various restrictions you can apply (per currency, country or group of customers).' mod='onboarding'}
+        {if $has_psp}
+            {l s='Your shop runs with PrestaShop Payments by HiPay, so that you can accept payments by card right now. Other payment methods are available too, make sure you set everything up!' mod='onboarding'}
+        {else}
+		    {l s='Select which payment methods you want to offer to customers on your shop, and manage the various restrictions you can apply (per currency, country or group of customers).' mod='onboarding'}
+        {/if}
 	{else if $current_step == 4}
 		{l s='If you feel you need more information, you can still have a look at PrestaShop Documentation: click on "Help" in the top right corner of your back office!' mod='onboarding'}
 	{else if $current_step == 5}
@@ -214,7 +218,11 @@ var onboarding_ajax_url = "{$link->getAdminLink('AdminOnboarding')|escape:'javas
 					<span class="title">{l s='Set up your payment methods' mod='onboarding'}</span>
 					{if $current_step == 3}
 						<p class="desc">
-							{l s='Select which payment methods you want to offer to customers on your shop, and manage the various restrictions you can apply (per currency, country or group of customers).' mod='onboarding'}
+                            {if $has_psp}
+                                {l s='Your shop runs with PrestaShop Payments by HiPay, so that you can accept payments by card right now. Other payment methods are available too, make sure you set everything up!' mod='onboarding'}
+                            {else}
+                                {l s='Select which payment methods you want to offer to customers on your shop, and manage the various restrictions you can apply (per currency, country or group of customers).' mod='onboarding'}
+                            {/if}
 							<br/><br/>
 							<a class="btn btn-primary continue_editing" href="#">
 								<i class="icon icon-credit-card icon-lg"></i>
