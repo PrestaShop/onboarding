@@ -45,6 +45,8 @@ class OnBoarding extends Module
 
 		if (Configuration::get('PS_ONBOARDING_CURRENT_STEP') > 6)
 			$this->uninstall();
+
+		$this->ps_versions_compliancy = array('min' => '1.6', 'max' => '1.6.99.99');
 	}
 
 	public function install()
